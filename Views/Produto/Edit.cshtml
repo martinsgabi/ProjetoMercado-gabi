@@ -1,0 +1,59 @@
+﻿@model ProjetoMercado.Models.Produto
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<h4>Produto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ProdutoId" />
+            <div class="form-group">
+                <label asp-for="NomeProduto" class="control-label"></label>
+                <input asp-for="NomeProduto" class="form-control" />
+                <span asp-validation-for="NomeProduto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrecoProduto" class="control-label"></label>
+                <input asp-for="PrecoProduto" class="form-control" />
+                <span asp-validation-for="PrecoProduto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QntEstoqueProduto" class="control-label"></label>
+                <input asp-for="QntEstoqueProduto" class="form-control" />
+                <span asp-validation-for="QntEstoqueProduto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumeroDoCodigo" class="control-label"></label>
+                <input asp-for="NumeroDoCodigo" class="form-control" />
+                <span asp-validation-for="NumeroDoCodigo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoriaId" class="control-label"></label>
+                <select asp-for="CategoriaId" class="form-control" asp-items="ViewBag.CategoriaId"></select>
+                <span asp-validation-for="CategoriaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FornecedoresId" class="control-label"></label>
+                <select asp-for="FornecedoresId" class="form-control" asp-items="ViewBag.FornecedoresId"></select>
+                <span asp-validation-for="FornecedoresId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar para a lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

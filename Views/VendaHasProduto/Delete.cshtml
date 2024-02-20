@@ -1,0 +1,39 @@
+﻿@model ProjetoMercado.Models.VendaHasProduto
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Deletar</h1>
+
+<h3>Você tem certeza de que quer excluir isso?</h3>
+<div>
+    <h4>VendaHasProduto</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Venda)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Venda.ValorTotal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Produto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Produto.NomeProduto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.QntVendaHas)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.QntVendaHas)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="VendaHasProdutoId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar para a lista</a>
+    </form>
+</div>

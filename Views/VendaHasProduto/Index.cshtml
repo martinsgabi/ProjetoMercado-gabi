@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ProjetoMercado.Models.VendaHasProduto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Vendas</h1>
+
+<p>
+    <a asp-action="Create">Criar novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Venda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Produto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QntVendaHas)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Venda.ValorTotal)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Produto.NomeProduto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QntVendaHas)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.VendaHasProdutoId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.VendaHasProdutoId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.VendaHasProdutoId">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

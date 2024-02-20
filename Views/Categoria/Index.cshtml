@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ProjetoMercado.Models.Categoria>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Categoria</h1>
+
+<p>
+    <a asp-action="Create">Criar novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeCategoria)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeCategoria)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CategoriaId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.CategoriaId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.CategoriaId">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

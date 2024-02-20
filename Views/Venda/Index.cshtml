@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ProjetoMercado.Models.Venda>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>venda</h1>
+
+<p>
+    <a asp-action="Create">Criar novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataVenda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vendedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pagamento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataVenda)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Cliente.NomeCliente)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.vendedor.NomeVendedor)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Pagamento.FormaDePagamento)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.VendaId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.VendaId">Detalhes</a> |
+                <a asp-action="ImpressaoMercado" asp-route-id="@item.VendaId">Imprimir</a> |
+                <a asp-action="Delete" asp-route-id="@item.VendaId">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

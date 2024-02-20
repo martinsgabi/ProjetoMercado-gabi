@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ProjetoMercado.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cliente</h1>
+
+<p>
+    <a asp-action="Create">Criar novo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelefoneCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CPFCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroDoCartao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelefoneCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CPFCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroDoCartao)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ClienteId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.ClienteId">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.ClienteId">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

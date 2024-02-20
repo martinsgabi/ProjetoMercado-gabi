@@ -1,0 +1,97 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos do Menu */
+.menu {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+    .menu ul {
+        list-style: none;
+    }
+
+        .menu ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+            .menu ul li a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+.nav-item {
+    margin-right: 50px;
+}
+
+/* Estilos do Formulário */
+.form-group {
+    margin-bottom: 20px;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .form-group button {
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .form-group button:hover {
+            background-color: #555;
+        }
+
+.btn {
+    background-color: #FFB31F;
+    color: #B21217;
+    border: none;
+}
+.logo {
+    width: 100px;
+    margin-right: 50px;
+}
+
+.caixa {
+    margin-top: 100px;
+    width: 800px;
+    height: 500px;
+    margin-left: 25px;
+}
+
+.fotos{
+    display: block;
+}
